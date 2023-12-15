@@ -20,7 +20,6 @@ def main(name, salary, location):
         f"My name is : {name}\nMy salary is: {sum(salary)}\nLocations visited: {location}")
 
 
-
 # !working with args/args are a must to pass
 @click.command()
 @click.argument("name")
@@ -59,7 +58,7 @@ def move_files(source, destination):
         click.echo(f"Moving {item} to folder {destination}")
 
 
-# ! prompting user input
+# !prompting user input
 @click.command()
 @click.option("--name", prompt=True)
 @click.option("--password", prompt=True, hide_input=True, confirmation_prompt=True)
@@ -74,9 +73,10 @@ def user_input(name, password):
 @click.option("--name", default="John", help="Change the color of text")
 def intro(name):
     '''Add color to text fg == foreground bg == background'''
-    
+
     # click.echo(click.style((f"Hello {name}"), fg="blue", bold=True))
     click.secho((f"Hello {name}"), fg="blue", bg="yellow", bold=True)
+
 
 # TODO: setuptools
 '''
@@ -99,13 +99,18 @@ setup(
 
 4.pipenv install --editable
 '''
+
+
+# !working with config files
 @click.command()
 @click.option("--name", "-n", default="John")
 @click.option("--salary", "-s")
 @click_config_file.configuration_option()
-
 def name_salary(name, salary):
     click.echo(f"Your name is {name}\nYour salary is: {salary}")
+
+
+
 
 if __name__ == "__main__":
     # main()
