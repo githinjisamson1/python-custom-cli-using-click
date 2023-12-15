@@ -27,7 +27,6 @@ def greet(name):
     click.echo(f"Hello {name}")
 
 
-
 # !multiple args
 @click.command()
 @click.argument("num1", type=int)
@@ -69,9 +68,20 @@ def user_input(name, password):
     click.echo(f"Your name is: {name}\nYour password: {password}")
 
 
+# !working with colors
+@click.command()
+@click.option("--name", default="John", help="Change the color of text")
+def intro(name):
+    '''Add color to text fg == foreground bg == background'''
+    
+    # click.echo(click.style((f"Hello {name}"), fg="blue", bold=True))
+    click.secho((f"Hello {name}"), fg="blue", bg="yellow", bold=True)
+
+
 if __name__ == "__main__":
     # main()
     # greet()
     # operate()
     # move_files()
     # user_input()
+    intro()
