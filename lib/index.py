@@ -26,9 +26,9 @@ def main(name, salary, location):
 def greet(name):
     click.echo(f"Hello {name}")
 
+
+
 # !multiple args
-
-
 @click.command()
 @click.argument("num1", type=int)
 @click.argument("num2", type=int)
@@ -58,13 +58,15 @@ def move_files(source, destination):
     for item in source:
         click.echo(f"Moving {item} to folder {destination}")
 
+
 # ! prompting user input
 @click.command()
 @click.option("--name", prompt=True)
+@click.option("--password", prompt=True, hide_input=True, confirmation_prompt=True)
 # @click.option("--name", prompt="Enter your name: ")
-def user_input(name):
+def user_input(name, password):
     # fname = click.prompt("Enter your name: ")
-    click.echo(f"Your name is: {name}")
+    click.echo(f"Your name is: {name}\nYour password: {password}")
 
 
 if __name__ == "__main__":
