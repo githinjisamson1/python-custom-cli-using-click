@@ -7,6 +7,7 @@ name = "pypi"
 colorama = "*"
 click-config-file = "*"
 pytest = "*"
+click-params = "*"
 
 [dev-packages]
 

@@ -17,8 +17,7 @@ def test_greet_in_simple_cli():
     # test command + arg
     result = runner.invoke(main, ["greet", "John"])
     assert "Hello John" in result.output
-    # assert result.output == "Hello John\n"
-    
+    # assert result.output == "Hello John\n"    
     assert result.exit_code == 0
 
 

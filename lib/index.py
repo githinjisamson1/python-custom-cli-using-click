@@ -108,6 +108,8 @@ setup(
 @click_config_file.configuration_option()
 def name_salary(name, salary):
     click.echo(f"Your name is {name}\nYour salary is: {salary}")
+    
+
 
 
 
