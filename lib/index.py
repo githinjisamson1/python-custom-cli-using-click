@@ -2,6 +2,7 @@
 # saves the hustle of having to run python3 lib/index.py
 
 import click
+import click_config_file
 
 
 @click.command()
@@ -18,9 +19,9 @@ def main(name, salary, location):
     click.echo(
         f"My name is : {name}\nMy salary is: {sum(salary)}\nLocations visited: {location}")
 
+
+
 # !working with args/args are a must to pass
-
-
 @click.command()
 @click.argument("name")
 def greet(name):
@@ -77,6 +78,34 @@ def intro(name):
     # click.echo(click.style((f"Hello {name}"), fg="blue", bold=True))
     click.secho((f"Hello {name}"), fg="blue", bg="yellow", bold=True)
 
+# TODO: setuptools
+'''
+1.pipenv install setuptools
+2.mycalculator.py
+3.setup.py
+
+from setuptools import setup
+
+setup(
+    name="mycalculator,
+    version="0.1",
+    py_modules=["mycalculator"],
+    install_requires=["click"]
+    entry-points="
+    [console_scripts]
+    mycalculator=mycalculator:main
+    "
+)
+
+4.pipenv install --editable
+'''
+@click.command()
+@click.option("--name", "-n", default="John")
+@click.option("--salary", "-s")
+@click_config_file.configuration_option()
+
+def name_salary(name, salary):
+    click.echo(f"Your name is {name}\nYour salary is: {salary}")
 
 if __name__ == "__main__":
     # main()
@@ -84,4 +113,5 @@ if __name__ == "__main__":
     # operate()
     # move_files()
     # user_input()
-    intro()
+    # intro()
+    name_salary()

@@ -32,11 +32,13 @@ if __name__ == "__main__":
     
 # TODO:
 '''
-main command
-annotate each command using main
+1.main command
+2.annotate each command using main
 
 i.e. 
 @click.group() == parent
+def parent()
 
-@click.command() == each child
+@parent.command() == each child
+def child()
 '''
