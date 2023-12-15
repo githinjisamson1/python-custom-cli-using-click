@@ -8,6 +8,7 @@ colorama = "*"
 click-config-file = "*"
 pytest = "*"
 click-params = "*"
+rich = "*"
 
 [dev-packages]
 
